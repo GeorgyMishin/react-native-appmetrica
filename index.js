@@ -59,13 +59,6 @@ export default {
    * @param {number} quantity
    */
   reportRevenue(productId: string, price: number, quantity: number) {
-    Platform.select({
-      android: AppMetrica.reportRevenue(productId, price, quantity),
-      ios: AppMetrica.reportRevenue(
-        productId,
-        price.toString(),
-        quantity.toString()
-      ),
-    });
+    AppMetrica.reportRevenue(productId, price, quantity);
   },
 };
